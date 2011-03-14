@@ -1,0 +1,6 @@
+/.classpath
+/.project
+/.settings
+/target/surefire-reports/*
+/target/surefire-reports
+*.class
