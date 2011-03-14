@@ -9,10 +9,18 @@ public class FieldTools {
 	private final Field field;
 	
 	public FieldTools(final Field field) {
+		
+		if (field==null)
+			throw new IllegalArgumentException("Constructor for FieldTools must be receive a field");
+		
 		this.field = field;
 	}
 	
 	public Boolean isType(final Class<?> clazz) {
+		
+		if (clazz==null)
+			throw new IllegalArgumentException("Method isType of FieldTools must be receive a class");
+		
 		return this.field.getType().equals(clazz);
 	}
 
