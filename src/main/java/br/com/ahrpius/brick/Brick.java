@@ -40,10 +40,16 @@ public class Brick {
 		
 	}
 	
-	public void putTag(Class<?> toClass, Class<? extends ForField> clazzTag) {
+	public void putTag(Class<? extends ForField> clazzTag, Class<?>... toClasses ) {
+		if (toClasses==null || toClasses.length==0){
+			throw new IllegalArgumentException();
+		}
+			
 		try {
 			ForField toTag = clazzTag.newInstance();
-			typedTagList.put(toClass, toTag);
+			for (int i = 0; i < toClasses.length; i++) {
+				typedTagList.put(toClasses[i], toTag);
+			}
 		} catch (InstantiationException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

@@ -7,5 +7,5 @@ public interface ForField {
 	public String make(final Field field);
 	
 	public Boolean match(final Field field);
-	
+
 }
